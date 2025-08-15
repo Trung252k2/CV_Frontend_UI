@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Frontend Developer (React/Next.js)</title>
+    <style>
+      :root {
+        --primary: #4b72fa;
+        --text: #333;
+        --muted: #666;
+        --bg: #f8f9fa;
+        --card: #ffffff;
+        --line: #e5e7eb;
+        --chip: #eef2ff;
+        --frontend: #e3f2fd;
+        --frontend-text: #0d47a1;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, Arial, sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      .cv-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--card);
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+      header {
+        text-align: center;
+        margin-bottom: 26px;
+      }
+      header h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 34px;
+      }
+      header h3 {
+        margin: 6px 0 12px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .contact {
+        font-size: 14px;
+        color: #444;
+      }
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .section {
+        margin: 22px 0;
+      }
+      .section h2 {
+        font-size: 18px;
+        margin: 0 0 12px;
+        display: inline-block;
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 4px;
+      }
+      ul {
+        margin: 6px 0 0 18px;
+        padding: 0;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      /* Projects grid */
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .project-card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fafafa;
+        padding: 12px 14px;
+      }
+      .project-title {
+        font-weight: 800;
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .project-title:hover {
+        text-decoration: underline;
+      }
+      .proj-meta {
+        font-size: 13px;
+        color: #444;
+        margin: 6px 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+      }
+      .tag {
+        background: var(--chip);
+        border: 1px solid #dfe3ff;
+        color: #2836c2;
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .tag.frontend {
+        background: var(--frontend);
+        color: var(--frontend-text);
+        border-color: #bbdefb;
+      }
+
+      /* Highlight */
+      .highlight {
+        background: #fff8e1;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      /* Page break for PDF */
+      .page-break {
+        page-break-before: always;
+        margin-top: 24px;
+      }
+
+      /* Print setup */
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+      @media print {
+        body {
+          background: #fff;
+          font-size: 14px;
+        }
+        .cv-container {
+          box-shadow: none;
+          border: none;
+          margin: 0;
+          max-width: 100%;
+          padding: 15px;
+        }
+        a[href^="http"]::after {
+          content: " (" attr(href) ")";
+          font-size: 10px;
+          color: #555;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 760px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cv-container">
+      <header>
+        <h1>Nguyen Tan Trung</h1>
+        <h3>Frontend Developer • React/Next.js Specialist</h3>
+        <div class="contact">
+          📞 +84 356 243 964 · 📧 trungtan252k211@gmail.com ·
+          <a href="https://github.com/TrungK2Tan" target="_blank" rel="noopener"
+            >GitHub: TrungK2Tan</a
+          >
+          ·
+          <a
+            href="https://www.linkedin.com/in/trung-nguy%E1%BB%85n-t%E1%BA%A5n-45a22a308/"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn: Nguyen Tan Trung</a
+          >
+        </div>
+      </header>
+
+      <!-- PROFILE -->
+      <section class="section">
+        <h2>Professional Profile</h2>
+        <p>
+          Frontend Developer specializing in building modern user interfaces with
+          <span class="highlight">React.js, Next.js and React Native</span>. 
+          Experienced in developing high-performance web/mobile applications with 
+          excellent user experience. Backend knowledge enables effective collaboration 
+          with full-stack teams and confident API integration.
+        </p>
+      </section>
+
+      <!-- CORE SKILLS -->
+      <section class="section">
+        <h2>Core Frontend Skills</h2>
+        <ul>
+          <li>
+            <strong class="highlight">React/Next.js:</strong> SSR, ISR, App Router, 
+            performance optimization, server components
+          </li>
+          <li>
+            <strong class="highlight">React Native:</strong> Cross-platform mobile 
+            app development
+          </li>
+          <li>
+            <strong>UI/UX:</strong> Responsive design with Tailwind CSS, 
+            Bootstrap, Storybook, Framer Motion
+          </li>
+          <li>
+            <strong>State Management:</strong> Redux Toolkit, Zustand, Context API, 
+            React Query
+          </li>
+          <li>
+            <strong>Performance Optimization:</strong> Code splitting, lazy loading, 
+            image optimization, bundle analysis
+          </li>
+        </ul>
+      </section>
+
+      <!-- SUPPORTING SKILLS -->
+      <section class="section">
+        <h2>Supporting Skills</h2>
+        <ul>
+          <li>
+            <strong>Backend:</strong> Node.js/Express, MongoDB, REST API, 
+            JWT Authentication
+          </li>
+          <li><strong>DevOps:</strong> Vercel, AWS EC2 basics, CI/CD pipelines</li>
+          <li>
+            <strong>Testing:</strong> Jest, React Testing Library
+          </li>
+          <li>
+            <strong>Soft Skills:</strong> Team collaboration, problem-solving, 
+            self-learning, technical documentation
+          </li>
+        </ul>
+      </section>
+
+      <!-- FEATURED PROJECTS -->
+      <section class="section">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+          <!-- 1 - ANP Law Firm -->
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://congtyluatanp232hcm.com/"
+              target="_blank"
+              rel="noopener"
+              >ANP Law Firm</a
+            >
+            <div class="proj-meta">
+              <strong>Role:</strong> Frontend Lead ·
+              <strong>Focus:</strong> UI/UX, Performance Optimization
+            </div>
+            <p>
+              <strong>Frontend Achievements:</strong><br />
+              - Designed reusable component system<br />
+              - Implemented smooth animations with Framer Motion<br />
+              <strong>Backend Integration:</strong> Strapi CMS, REST API
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Strapi</span>
+              <span class="tag">SEO</span>
+            </div>
+          </article>
+
+          <!-- 2 - SagoWood -->
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/SagoWood"
+              target="_blank"
+              rel="noopener"
+              >SagoWood - Social Network</a
+            >
+            <div class="proj-meta">
+              <strong>Role:</strong> Frontend Developer ·
+              <strong>Focus:</strong> Real-time UI
+            </div>
+            <p>
+              <strong>Frontend Achievements:</strong><br />
+              - Implemented infinite scroll with React Query<br />
+              - Real-time interactions with Socket.io<br />
+              - Optimized re-renders with React.memo<br />
+              - Mobile-first responsive design<br />
+              <strong>Backend Integration:</strong> Node.js, MongoDB
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React</span>
+              <span class="tag">Socket.io</span>
+              <span class="tag">Tailwind</span>
+            </div>
+          </article>
+
+          <!-- 3 - Movie App -->
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/Movie"
+              target="_blank"
+              rel="noopener"
+              >Movie App</a
+            >
+            <div class="proj-meta">
+              <strong>Role:</strong> Mobile Developer ·
+              <strong>Focus:</strong> PWA, Offline Support
+            </div>
+            <p>
+              <strong>Frontend Achievements:</strong><br />
+              - Smooth mobile experience with React Native<br />
+              - Implemented PWA offline support<br />
+              - Optimized image loading performance<br />
+              - Efficient infinite scroll implementation<br />
+              <strong>Backend Integration:</strong> TMDB API, Firebase
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React Native</span>
+              <span class="tag">PWA</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </article>
+
+          <!-- 4 - Small Gift -->
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/MonQua"
+              target="_blank"
+              rel="noopener"
+              >Small Gift</a
+            >
+            <div class="proj-meta">
+              <strong>Role:</strong> Full-stack Developer ·
+              <strong>Focus:</strong> UI/API Integration
+            </div>
+            <p>
+              <strong>Frontend Achievements:</strong><br />
+              - Custom infinite scroll hook<br />
+              - Real-time notification system<br />
+              - Reduced bundle size by 40%<br />
+              - CI/CD with GitHub Actions<br />
+              <strong>Backend:</strong> Node.js, MongoDB, AWS
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React</span>
+              <span class="tag">AWS</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PAGE BREAK -->
+      <div class="page-break"></div>
+
+      <!-- OTHER PROJECTS -->
+      <section class="section">
+        <h2>Other Projects</h2>
+        <div class="projects">
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/DuDi_Spa"
+              target="_blank"
+              rel="noopener"
+              >DuDi Spa</a
+            >
+            <p class="muted">
+              Spa management application - Focused on UI/UX and form validation
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React</span>
+              <span class="tag">Formik</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/TaskDaily"
+              target="_blank"
+              rel="noopener"
+              >TaskDaily</a
+            >
+            <p class="muted">Task management application - Drag & drop UI</p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React</span>
+              <span class="tag">DnD</span>
+              <span class="tag">Golang</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/TravelStory"
+              target="_blank"
+              rel="noopener"
+              >TravelStory</a
+            >
+            <p class="muted">Travel photo album - Image display optimization</p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">React</span>
+              <span class="tag">Cloudinary</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a
+              class="project-title"
+              href="https://github.com/TrungK2Tan/TravelStory"
+              target="_blank"
+              rel="noopener"
+              >Electric Motor</a
+            >
+            <p class="muted">
+              Electric motorcycle platform for buying, renting, and locating charging stations
+            </p>
+            <div class="tags">
+              <span class="tag frontend">Frontend</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Cloudinary</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section class="section">
+        <h2>Work Experience</h2>
+        <ul>
+          <li>
+            <strong>Frontend Developer</strong> — DUDI COMPANY LIMITED
+            (02/2025–08/2025)<br />
+            - Developed interfaces with <span class="highlight">React/Next.js</span><br />
+            - Optimized application performance (reduced load time by 40%)<br />
+            - Built internal UI component library<br />
+            - <em>Backend support:</em> API integration, data flow troubleshooting
+          </li>
+          <li>
+            <strong>Frontend Intern</strong> — SAO VIET COMPANY
+            (06/2024–09/2024)<br />
+            - Developed reusable components with <span class="highlight">React and Tailwind</span><br />
+            - Wrote technical documentation and unit tests<br />
+            - Participated in code reviews
+          </li>
+        </ul>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <h2>Education</h2>
+        <p>
+          <strong>Ho Chi Minh City University of Technology (HUTECH)</strong> — 
+          Bachelor of Information Technology (2020–2024)
+        </p>
+        <p class="muted">Major: Software Development</p>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="section">
+        <h2>Key Achievements</h2>
+        <ul>
+          <li>Reduced bundle size by 40% through code-splitting</li>
+          <li>Developed internal design system improving team productivity</li>
+          <li>Implemented performance optimizations saving 30% in API calls</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
