@@ -39,6 +39,14 @@
         text-align: center;
         margin-bottom: 26px;
       }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--primary);
+        margin: 0 auto 16px;
+      }
       header h1 {
         margin: 0;
         color: var(--primary);
@@ -87,6 +95,24 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
+      }
+      .project-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .project-images img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        transition: transform 0.2s ease;
+      }
+
+      .project-images img:hover {
+        transform: scale(1.02);
       }
       .project-card {
         border: 1px solid var(--line);
@@ -177,6 +203,12 @@
   <body>
     <main class="cv-container">
       <header>
+        <!-- Add your avatar image here -->
+        <img
+          src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755274425/services_apltvy.png"
+          alt="Nguyen Tan Trung"
+          class="avatar"
+        />
         <h1>Nguyen Tan Trung</h1>
         <h3>Frontend Developer • React/Next.js Specialist</h3>
         <div class="contact">
@@ -198,12 +230,29 @@
       <section class="section">
         <h2>Professional Profile</h2>
         <p>
-          Frontend Developer specializing in building modern user interfaces with
-          <span class="highlight">React.js, Next.js and React Native</span>. 
-          Experienced in developing high-performance web/mobile applications with 
-          excellent user experience. Backend knowledge enables effective collaboration 
-          with full-stack teams and confident API integration.
+          Frontend Developer specializing in building modern user interfaces
+          with
+          <span class="highlight">React.js, Next.js and React Native</span>.
+          Experienced in developing high-performance web/mobile applications
+          with excellent user experience. Backend knowledge enables effective
+          collaboration with full-stack teams and confident API integration.
         </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <h2>Education</h2>
+        <p>
+          <strong>Ho Chi Minh City University of Technology (HUTECH)</strong> —
+          Bachelor of Information Technology (2020–2024)
+        </p>
+        <p class="muted">Major: Software Development</p>
+      </section>
+      <!-- certificate -->
+      <section class="section">
+        <h2>CERTIFICATE</h2>
+        <p><strong>English</strong> — B1-CEF</p>
+        <p><strong>Cisco</strong> — CCSA</p>
       </section>
 
       <!-- CORE SKILLS -->
@@ -211,24 +260,24 @@
         <h2>Core Frontend Skills</h2>
         <ul>
           <li>
-            <strong class="highlight">React/Next.js:</strong> SSR, ISR, App Router, 
-            performance optimization, server components
+            <strong class="highlight">React/Next.js:</strong> SSR, ISR, App
+            Router, performance optimization, server components
           </li>
           <li>
-            <strong class="highlight">React Native:</strong> Cross-platform mobile 
-            app development
+            <strong class="highlight">React Native:</strong> Cross-platform
+            mobile app development
           </li>
           <li>
-            <strong>UI/UX:</strong> Responsive design with Tailwind CSS, 
+            <strong>UI/UX:</strong> Responsive design with Tailwind CSS,
             Bootstrap, Storybook, Framer Motion
           </li>
           <li>
-            <strong>State Management:</strong> Redux Toolkit, Zustand, Context API, 
-            React Query
+            <strong>State Management:</strong> Redux Toolkit, Zustand, Context
+            API, React Query
           </li>
           <li>
-            <strong>Performance Optimization:</strong> Code splitting, lazy loading, 
-            image optimization, bundle analysis
+            <strong>Performance Optimization:</strong> Code splitting, lazy
+            loading, image optimization, bundle analysis
           </li>
         </ul>
       </section>
@@ -238,26 +287,59 @@
         <h2>Supporting Skills</h2>
         <ul>
           <li>
-            <strong>Backend:</strong> Node.js/Express, MongoDB, REST API, 
-            JWT Authentication
-          </li>
-          <li><strong>DevOps:</strong> Vercel, AWS EC2 basics, CI/CD pipelines</li>
-          <li>
-            <strong>Testing:</strong> Jest, React Testing Library
+            <strong>Backend:</strong> Node.js/Express, MongoDB, REST API, JWT
+            Authentication
           </li>
           <li>
-            <strong>Soft Skills:</strong> Team collaboration, problem-solving, 
+            <strong>DevOps:</strong> Vercel, AWS EC2 basics, CI/CD pipelines
+          </li>
+          <li><strong>Testing:</strong> Jest, React Testing Library</li>
+          <li>
+            <strong>Soft Skills:</strong> Team collaboration, problem-solving,
             self-learning, technical documentation
           </li>
         </ul>
       </section>
-
+      <!-- WORK EXPERIENCE -->
+      <section class="section">
+        <h2>Work Experience</h2>
+        <ul>
+          <li>
+            <strong>Frontend Developer</strong> — DUDI COMPANY LIMITED
+            (02/2025–08/2025)<br />
+            - Developed interfaces with
+            <span class="highlight">React/Next.js</span><br />
+            - Optimized application performance (reduced load time by 40%)<br />
+            - Built internal UI component library<br />
+            - <em>Backend support:</em> API integration, data flow
+            troubleshooting
+          </li>
+          <li>
+            <strong>Frontend Intern</strong> — SAO VIET COMPANY
+            (06/2024–09/2024)<br />
+            - Developed reusable components with
+            <span class="highlight">React and Tailwind</span><br />
+            - Wrote technical documentation and unit tests<br />
+            - Participated in code reviews
+          </li>
+        </ul>
+      </section>
       <!-- FEATURED PROJECTS -->
       <section class="section">
         <h2>Featured Projects</h2>
         <div class="projects">
           <!-- 1 - ANP Law Firm -->
           <article class="project-card">
+            <div class="project-images">
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275068/d417d31e-b156-44ca-8664-ef561b92ad83.png"
+                alt="ANP Law Firm Screenshot 1"
+              />
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275104/d99ae945-4733-45b0-9450-4a3f32c5ab44.png"
+                alt="ANP Law Firm Screenshot 2"
+              />
+            </div>
             <a
               class="project-title"
               href="https://congtyluatanp232hcm.com/"
@@ -285,6 +367,16 @@
 
           <!-- 2 - SagoWood -->
           <article class="project-card">
+            <div class="project-images">
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275586/8044572a-7cb9-417a-b66e-b73d4668556d.png"
+                alt="SagoWood Screenshot 1"
+              />
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275668/463c7748-f780-401b-be6f-31626c904587.png"
+                alt="SagoWood Screenshot 2"
+              />
+            </div>
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/SagoWood"
@@ -298,6 +390,7 @@
             </div>
             <p>
               <strong>Frontend Achievements:</strong><br />
+              - DarkMode/LightMode <br/>
               - Implemented infinite scroll with React Query<br />
               - Real-time interactions with Socket.io<br />
               - Optimized re-renders with React.memo<br />
@@ -314,6 +407,16 @@
 
           <!-- 3 - Movie App -->
           <article class="project-card">
+            <div class="project-images">
+              <img
+                src="https://via.placeholder.com/400x225/4b72fa/ffffff?text=Movie+App+1"
+                alt="Movie App Screenshot 1"
+              />
+              <img
+                src="https://via.placeholder.com/400x225/4b72fa/ffffff?text=Movie+App+2"
+                alt="Movie App Screenshot 2"
+              />
+            </div>
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/Movie"
@@ -343,6 +446,16 @@
 
           <!-- 4 - Small Gift -->
           <article class="project-card">
+            <div class="project-images">
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275958/de744db4-61a4-4fa0-aec9-748db37194d5.png"
+                alt="Small Gift Screenshot 1"
+              />
+              <img
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755276069/cdf2df35-cada-4245-9f28-b49562207988.png"
+                alt="Small Gift Screenshot 2"
+              />
+            </div>
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/MonQua"
@@ -380,6 +493,7 @@
         <h2>Other Projects</h2>
         <div class="projects">
           <article class="project-card">
+           
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/DuDi_Spa"
@@ -416,6 +530,7 @@
           </article>
 
           <article class="project-card">
+          
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/TravelStory"
@@ -434,6 +549,7 @@
           </article>
 
           <article class="project-card">
+          
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/TravelStory"
@@ -442,7 +558,8 @@
               >Electric Motor</a
             >
             <p class="muted">
-              Electric motorcycle platform for buying, renting, and locating charging stations
+              Electric motorcycle platform for buying, renting, and locating
+              charging stations
             </p>
             <div class="tags">
               <span class="tag frontend">Frontend</span>
@@ -454,39 +571,6 @@
           </article>
         </div>
       </section>
-
-      <!-- WORK EXPERIENCE -->
-      <section class="section">
-        <h2>Work Experience</h2>
-        <ul>
-          <li>
-            <strong>Frontend Developer</strong> — DUDI COMPANY LIMITED
-            (02/2025–08/2025)<br />
-            - Developed interfaces with <span class="highlight">React/Next.js</span><br />
-            - Optimized application performance (reduced load time by 40%)<br />
-            - Built internal UI component library<br />
-            - <em>Backend support:</em> API integration, data flow troubleshooting
-          </li>
-          <li>
-            <strong>Frontend Intern</strong> — SAO VIET COMPANY
-            (06/2024–09/2024)<br />
-            - Developed reusable components with <span class="highlight">React and Tailwind</span><br />
-            - Wrote technical documentation and unit tests<br />
-            - Participated in code reviews
-          </li>
-        </ul>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="section">
-        <h2>Education</h2>
-        <p>
-          <strong>Ho Chi Minh City University of Technology (HUTECH)</strong> — 
-          Bachelor of Information Technology (2020–2024)
-        </p>
-        <p class="muted">Major: Software Development</p>
-      </section>
-
       <!-- ACHIEVEMENTS -->
       <section class="section">
         <h2>Key Achievements</h2>
