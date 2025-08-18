@@ -693,6 +693,23 @@
           }
         });
       </script>
+      <script>
+  // Chặn chuột phải
+  document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+  // Chặn F12, Ctrl+Shift+I, Ctrl+U
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key === "I") ||
+      (e.ctrlKey && e.key === "u")
+    ) {
+      e.preventDefault();
+      alert("Inspect bị chặn!");
+    }
+  });
+</script>
+
     </main>
   </body>
 </html>
