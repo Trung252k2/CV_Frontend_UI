@@ -105,10 +105,12 @@
 
       .project-images img {
         width: 100%;
-        height: auto;
+        height: 160px; /* Fixed height */
+        object-fit: cover; /* Ensure images fill the space */
         border-radius: 6px;
         border: 1px solid var(--line);
         transition: transform 0.2s ease;
+        cursor: zoom-in;
       }
 
       .project-images img:hover {
@@ -162,6 +164,41 @@
         font-weight: 600;
       }
 
+      /* Image modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow: auto;
+      }
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover {
+        color: #ccc;
+      }
+
       /* Page break for PDF */
       .page-break {
         page-break-before: always;
@@ -190,12 +227,22 @@
           font-size: 10px;
           color: #555;
         }
+        .project-images img {
+          height: auto;
+          max-height: 100px;
+        }
       }
 
       /* Responsive */
       @media (max-width: 760px) {
         .projects {
           grid-template-columns: 1fr;
+        }
+        .project-images {
+          grid-template-columns: 1fr;
+        }
+        .project-images img {
+          height: 200px;
         }
       }
     </style>
@@ -237,6 +284,13 @@
           with excellent user experience. Backend knowledge enables effective
           collaboration with full-stack teams and confident API integration.
         </p>
+        <p class="muted">
+          <em
+            >➡ Over 1 year of hands-on experience in frontend development,
+            focusing on React/Next.js, UI/UX optimization, and API
+            integration.</em
+          >
+        </p>
       </section>
 
       <!-- EDUCATION -->
@@ -248,11 +302,19 @@
         </p>
         <p class="muted">Major: Software Development</p>
       </section>
-      <!-- certificate -->
+      <!-- CERTIFICATES -->
       <section class="section">
-        <h2>CERTIFICATE</h2>
-        <p><strong>English</strong> — B1-CEF</p>
-        <p><strong>Cisco</strong> — CCSA</p>
+        <h2>Certificates</h2>
+        <p>
+          <strong>English Certificate (B1-CEF)</strong> — Certified in all 4
+          skills (Listening, Speaking, Reading, Writing)
+        </p>
+        <p>
+          <strong>Cisco Cybersecurity Essentials (CCSA)</strong> — Awarded to
+          <em>Nguyen Tan Trung</em> for successfully completing
+          <span class="highlight">Partner: Cloud Security</span> through the
+          Cisco Networking Academy Program
+        </p>
       </section>
 
       <!-- CORE SKILLS -->
@@ -323,7 +385,14 @@
             - Participated in code reviews
           </li>
         </ul>
+        <p class="muted">
+          <em
+            >➡ Total: Over 1 year of professional experience in Frontend
+            Development (React/Next.js, Tailwind, API integration).</em
+          >
+        </p>
       </section>
+
       <!-- FEATURED PROJECTS -->
       <section class="section">
         <h2>Featured Projects</h2>
@@ -334,10 +403,12 @@
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275068/d417d31e-b156-44ca-8664-ef561b92ad83.png"
                 alt="ANP Law Firm Screenshot 1"
+                onclick="openModal(this)"
               />
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275104/d99ae945-4733-45b0-9450-4a3f32c5ab44.png"
                 alt="ANP Law Firm Screenshot 2"
+                onclick="openModal(this)"
               />
             </div>
             <a
@@ -371,10 +442,12 @@
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275586/8044572a-7cb9-417a-b66e-b73d4668556d.png"
                 alt="SagoWood Screenshot 1"
+                onclick="openModal(this)"
               />
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275668/463c7748-f780-401b-be6f-31626c904587.png"
                 alt="SagoWood Screenshot 2"
+                onclick="openModal(this)"
               />
             </div>
             <a
@@ -390,7 +463,7 @@
             </div>
             <p>
               <strong>Frontend Achievements:</strong><br />
-              - DarkMode/LightMode <br/>
+              - DarkMode/LightMode <br />
               - Implemented infinite scroll with React Query<br />
               - Real-time interactions with Socket.io<br />
               - Optimized re-renders with React.memo<br />
@@ -409,12 +482,14 @@
           <article class="project-card">
             <div class="project-images">
               <img
-                src="https://via.placeholder.com/400x225/4b72fa/ffffff?text=Movie+App+1"
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755505167/Screenshot_2025-08-18_151810_wsgszt.png"
                 alt="Movie App Screenshot 1"
+                onclick="openModal(this)"
               />
               <img
-                src="https://via.placeholder.com/400x225/4b72fa/ffffff?text=Movie+App+2"
+                src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755505167/Screenshot_2025-08-18_151833_egyxci.png"
                 alt="Movie App Screenshot 2"
+                onclick="openModal(this)"
               />
             </div>
             <a
@@ -450,10 +525,12 @@
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755275958/de744db4-61a4-4fa0-aec9-748db37194d5.png"
                 alt="Small Gift Screenshot 1"
+                onclick="openModal(this)"
               />
               <img
                 src="https://res.cloudinary.com/dcqzcxg3x/image/upload/v1755276069/cdf2df35-cada-4245-9f28-b49562207988.png"
                 alt="Small Gift Screenshot 2"
+                onclick="openModal(this)"
               />
             </div>
             <a
@@ -493,7 +570,6 @@
         <h2>Other Projects</h2>
         <div class="projects">
           <article class="project-card">
-           
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/DuDi_Spa"
@@ -530,7 +606,6 @@
           </article>
 
           <article class="project-card">
-          
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/TravelStory"
@@ -549,7 +624,6 @@
           </article>
 
           <article class="project-card">
-          
             <a
               class="project-title"
               href="https://github.com/TrungK2Tan/TravelStory"
@@ -580,6 +654,45 @@
           <li>Implemented performance optimizations saving 30% in API calls</li>
         </ul>
       </section>
+
+      <!-- Image Modal -->
+      <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" />
+      </div>
+
+      <script>
+        // Modal functionality
+        function openModal(img) {
+          const modal = document.getElementById("imageModal");
+          const modalImg = document.getElementById("modalImage");
+          modal.style.display = "block";
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+
+        function closeModal() {
+          const modal = document.getElementById("imageModal");
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Re-enable scrolling
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function (event) {
+          const modal = document.getElementById("imageModal");
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeModal();
+          }
+        });
+      </script>
     </main>
   </body>
 </html>
